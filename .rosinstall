@@ -1,6 +1,0 @@
-- git:
-    local-name: darknet_ros
-    uri: https://github.com/leggedrobotics/darknet_ros.git
-- git:
-    local-name: homework4
-    uri: git@github.com:ME495-EmbeddedSystems/homework-4-shankhan247.git
