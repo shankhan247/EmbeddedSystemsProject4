@@ -4,7 +4,7 @@
       <param name="pixel_format" value="yuyv"/>
     </node>
   <!-- Include yolo_v3 launch file -->
-  <include file="$(find darknet_ros)/launch/yolo_v3.launch">
+  <include file="$(find darknet_ros)/launch/yolo_v3.launch" />
 
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find homework4)/rviz/web.rviz" />
 
