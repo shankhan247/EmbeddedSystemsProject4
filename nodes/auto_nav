@@ -10,9 +10,15 @@ PUBLISHERS:
 
 THIS SCRIPT IS DERIVED FROM THE FOLLOWING SOURCE: 
 https://hotblackrobotics.github.io/en/blog/2018/01/29/action-client-py/
-Accessed on: 11/19/2019 
+Accessed on: 11/18/2019 
 """
 
+import rospy
+
+# Brings in the SimpleActionClient
+import actionlib
+# Brings in the .action file and messages used by the move base action
+from move_base_msgs.msg import MoveBaseAction, MoveBaseGoal
 
 def auto_move():
 
@@ -29,9 +35,11 @@ def auto_move():
     goal.target_pose.header.frame_id = "map"
     goal.target_pose.header.stamp = rospy.Time.now()
    # Move 0.5 meters forward along the x axis of the "map" coordinate frame 
-    goal.target_pose.pose.position.x = 0.5
+    goal.target_pose.pose.position.x = 10
+    goal.target_pose.pose.position.y = 5
+
    # No rotation of the mobile base frame w.r.t. map frame
-    goal.target_pose.pose.orientation.w = 1.0
+    #goal.target_pose.pose.orientation.w = 1.0
 
    # Sends the goal to the action server.
     client.send_goal(goal)
@@ -44,7 +52,6 @@ def auto_move():
     else:
     # Result of executing the action
         return client.get_result()   
-
 
 def main():
     move = auto_move()
