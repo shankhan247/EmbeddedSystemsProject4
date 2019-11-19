@@ -46,7 +46,3 @@ roslaunch homework4 auto_drivemap.launch
 goal: autonomously drive the robot while gmapping.
 strategy: to issue commands allowing the robot to move, the move_base package is used to issue x/y poses. This is coupled with the actionlib pakage, which will allow the node to set goals of certain waypoints and communicate when a goal is reached. Poses will be manually set and each time the turtlebot3 reaches a waypoint, the turtlebot will then follow the navigation path to the next waypoint. This will be repeated until the turtlebot3 travels throughout the map. 
  
-
-
-
-
