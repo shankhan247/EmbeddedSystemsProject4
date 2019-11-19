@@ -7,3 +7,13 @@ web.launch: This is the launch file created for the Image Processing section of 
 
  Screenshot of example image when running this launch file:
  ![YOLO Image](YOLO1)
+ 
+ turtlebot3_load.launch:
+ 
+ needed to install the slam: sudo apt install ros-melodic-slam-gmapping
+ 
+ command to launch this launch file: roslaunch homework4 turtlebot3_load.launch slam_methods:=gmapping
+
+to drive the turtlebot3: 
+$ export TURTLEBOT3_MODEL=burger
+$ roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
