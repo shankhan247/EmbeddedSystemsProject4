@@ -21,6 +21,31 @@ roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
 turtlebot3_localize.launch: Launch file is derived from the turtlebot3_navigation launch file, which loads rviz, the map server, amcl, move_base launch file, and turtlebot3 burger robot. The amcl is resonsible for localizing the robot and the move_base launch file part of the move_base package responsible for moving the turtlebot3 to a goal via pose messages. 
 
 Command to run this:
+roslaunch homework4 turtlebot3_localize.launch 
+
+turtlebot3_localize_gazebo.launch: This launch file is identical to turtlebot3_localize.launch except that the gazebo world with additional obstacles is loaded.
+
+Command to run this:
+roslaunch homework4 turtlebot3_localize_gazebo.launch
+
+Screenshots of navigation plan being executed and turtlebot3 moving around obstacles in rviz:
+
+ ![Turtlebot moving along a planned navigation](turtlebot_navigation.png)
+ 
+ ![Turtlebot moving along a planned navigation with obstacles](turtlebot3_obstacles.png)
+ 
+ 
+auto_drivemap.launch: Performs the same functions as turtlebot3_load.launch, but also loads the move_base launch file, in order to issue pose commands to turtlebot3, and launches the created node auto_nav, which explores its environment autonomously while gmapping. 
+
+Command to run this:
+roslaunch homework4 auto_drivemap.launch
+
+
+**Nodes**
+*auto_nav*
+goal: autonomously drive the robot while gmapping.
+strategy: to issue commands allowing the robot to move, the move_base package is used to issue x/y poses. This is coupled with the actionlib pakage, which will allow the node to set goals of certain waypoints and communicate when a goal is reached. Poses will be manually set and each time the turtlebot3 reaches a waypoint, the turtlebot will then follow the navigation path to the next waypoint. This will be repeated until the turtlebot3 travels throughout the map. 
+ 
 
 
 
