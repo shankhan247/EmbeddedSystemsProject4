@@ -1,4 +1,4 @@
-image: /home/shankhan247/map.pgm
+image: /home/shankhan247/ROS_Homework4/src/homework4/map.pgm
 resolution: 0.050000
 origin: [-10.000000, -10.000000, 0.000000]
 negate: 0
